@@ -1029,7 +1029,7 @@ export default function Home() {
                         >
                           <Mail className="h-5 w-5 text-primary" />
                           <Link
-                            href="mailto:your.daelcarte@up.edu.ph"
+                            href="mailto:daelcarte@up.edu.ph"
                             className="text-sm hover:underline"
                           >
                             daelcarte@up.edu.ph
