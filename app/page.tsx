@@ -160,10 +160,11 @@ export default function Home() {
                   color="text.secondary"
                   className="max-w-[900px]"
                 >
-                  I&apos;m a passionate web developer with a strong focus on
-                  creating responsive, user-friendly websites. With expertise in
-                  modern frameworks like React and Next.js, I build fast,
-                  scalable, and maintainable web applications.
+                  I&apos;m a programmer and a software developer with a focus on
+                  mobile and web development. Also, I have expertise in modern
+                  frameworks like React and Next.js, and integrating it with AI
+                  functionalities. I build fast, scalable, and maintainable
+                  applications.
                 </Typography>
               </Box>
               <Grid container spacing={6} className="py-12 items-center">

@@ -3,7 +3,7 @@ import "./globals.css";
 import CustomLayout from "./customLayout";
 
 export const metadata: Metadata = {
-  title: "Portfolio | Your Name",
+  title: "Dave Elcarte's Portfolio",
   description: "Personal portfolio website showcasing my projects and skills",
 };
 
