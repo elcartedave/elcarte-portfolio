@@ -11,6 +11,35 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "coffee-website",
+    title: "Coffee Shop Website",
+    description:
+      "A website for a coffee shop that allows customers to view the menu and its pricelist, its operating and soon-to-openlocations nationwide, and allow them to inquire about the shop.",
+    image: "/assets/coffee.png",
+    imageAlt: "Coffee Shop Website",
+    technologies: ["Next.js", "Firebase", "Tailwind", "TypeScript"],
+    githubUrl: "https://github.com/elcartedave/coffee-shop-website",
+    demoUrl: "https://b1t1-website.vercel.app/",
+  },
+  {
+    id: "document-qa",
+    title: "AI Document Assistant",
+    description:
+      "An AI-powered document assistant that can answer questions about the document and provide insights based on the document's content.",
+    image: "/assets/document.png",
+    imageAlt: "AI Document Assistant",
+    technologies: [
+      "Next.js",
+      "Tailwind",
+      "TypeScript",
+      "OpenAI API",
+      "Groq API",
+      "Pinecone",
+    ],
+    githubUrl: "https://github.com/elcartedave/ai-document-assistant",
+    demoUrl: "https://ai-document-assistant-iota.vercel.app/",
+  },
+  {
     id: "ics-arms",
     title: "ICS Alumni Relations and Management System (ICS-ARMS)",
     description:

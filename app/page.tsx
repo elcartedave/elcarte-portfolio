@@ -28,25 +28,25 @@ export default function Home() {
           <nav className="hidden md:flex gap-6">
             <Link
               href="#about"
-              className="text-sm font-medium hover:underline underline-offset-4"
+              className="text-sm font-medium hover:underline underline-offset-4 transition-all duration-300 hover:text-primary hover:scale-105"
             >
               About
             </Link>
             <Link
               href="#skills"
-              className="text-sm font-medium hover:underline underline-offset-4"
+              className="text-sm font-medium hover:underline underline-offset-4 transition-all duration-300 hover:text-primary hover:scale-105"
             >
               Skills
             </Link>
             <Link
               href="#projects"
-              className="text-sm font-medium hover:underline underline-offset-4"
+              className="text-sm font-medium hover:underline underline-offset-4 transition-all duration-300 hover:text-primary hover:scale-105"
             >
               Projects
             </Link>
             <Link
               href="#contact"
-              className="text-sm font-medium hover:underline underline-offset-4"
+              className="text-sm font-medium hover:underline underline-offset-4 transition-all duration-300 hover:text-primary hover:scale-105"
             >
               Contact
             </Link>
@@ -57,7 +57,17 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <IconButton aria-label="GitHub">
+              <IconButton
+                aria-label="GitHub"
+                sx={{
+                  transition: "all 0.3s ease",
+                  "&:hover": {
+                    transform: "scale(1.1)",
+                    backgroundColor: "primary.main",
+                    color: "white",
+                  },
+                }}
+              >
                 <Github className="h-5 w-5" />
               </IconButton>
             </Link>
@@ -66,7 +76,17 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <IconButton aria-label="LinkedIn">
+              <IconButton
+                aria-label="LinkedIn"
+                sx={{
+                  transition: "all 0.3s ease",
+                  "&:hover": {
+                    transform: "scale(1.1)",
+                    backgroundColor: "primary.main",
+                    color: "white",
+                  },
+                }}
+              >
                 <Linkedin className="h-5 w-5" />
               </IconButton>
             </Link>
@@ -106,12 +126,36 @@ export default function Home() {
                       <Button
                         variant="contained"
                         endIcon={<ArrowRight className="h-4 w-4" />}
+                        sx={{
+                          transition: "all 0.3s ease",
+                          "&:hover": {
+                            transform: "translateY(-2px)",
+                            boxShadow: "0 8px 25px rgba(59, 130, 246, 0.3)",
+                            "& .MuiSvgIcon-root": {
+                              transform: "translateX(4px)",
+                            },
+                          },
+                        }}
                       >
                         Message Me
                       </Button>
                     </Link>
                     <Link href="#projects" style={{ textDecoration: "none" }}>
-                      <Button variant="outlined">View My Projects</Button>
+                      <Button
+                        variant="outlined"
+                        sx={{
+                          transition: "all 0.3s ease",
+                          "&:hover": {
+                            transform: "translateY(-2px)",
+                            backgroundColor: "primary.main",
+                            color: "white",
+                            borderColor: "primary.main",
+                            boxShadow: "0 8px 25px rgba(59, 130, 246, 0.2)",
+                          },
+                        }}
+                      >
+                        View My Projects
+                      </Button>
                     </Link>
                   </Box>
                 </Box>
@@ -129,6 +173,13 @@ export default function Home() {
                     overflow: "hidden",
                     border: "4px solid",
                     borderColor: "primary.main",
+                    transition: "all 0.3s ease",
+                    cursor: "pointer",
+                    "&:hover": {
+                      transform: "scale(1.05)",
+                      borderColor: "primary.dark",
+                      boxShadow: "0 10px 30px rgba(59, 130, 246, 0.3)",
+                    },
                   }}
                 >
                   <Image
@@ -136,7 +187,7 @@ export default function Home() {
                     alt="Profile"
                     width={600}
                     height={600}
-                    className="aspect-square object-cover"
+                    className="aspect-square object-cover transition-transform duration-300 hover:scale-110"
                   />
                 </Box>
               </Grid>
@@ -161,11 +212,11 @@ export default function Home() {
                   className="max-w-[900px]"
                 >
                   I&apos;m a programmer and a software developer with a focus on
-                  mobile and web development. Also, my main expertise lies in
-                  modern frameworks like React and Next.js, with Firebase and/or
-                  Google Cloud Platform (GCP) as backend, and integrating it
-                  with AI functionalities. I build fast, scalable, and
-                  maintainable applications suitable for long-term use.
+                  mobile and web development. My main expertise lies in modern
+                  frameworks like React and Next.js, with Firebase and/or Google
+                  Cloud Platform (GCP) as backend, and integrating it with AI
+                  functionalities. I build fast, scalable, and maintainable
+                  applications suitable for long-term use.
                 </Typography>
               </Box>
               <Grid container spacing={6} className="py-12 items-center">
@@ -273,7 +324,18 @@ export default function Home() {
               </Box>
               <Grid container spacing={4} className="py-12">
                 <Grid item xs={12} md={4}>
-                  <Card sx={{ height: "100%" }}>
+                  <Card
+                    sx={{
+                      height: "100%",
+                      transition: "all 0.3s ease",
+                      cursor: "pointer",
+                      "&:hover": {
+                        transform: "translateY(-8px)",
+                        boxShadow: "0 12px 40px rgba(59, 130, 246, 0.15)",
+                        borderColor: "primary.main",
+                      },
+                    }}
+                  >
                     <CardContent>
                       <Box
                         sx={{
@@ -293,6 +355,8 @@ export default function Home() {
                           "HTML",
                           "CSS",
                           "Tailwind CSS",
+                          "ShadCN UI",
+                          "Material UI",
                           "JavaScript",
                           "TypeScript",
                           "React",
@@ -300,14 +364,37 @@ export default function Home() {
                           "Flutter",
                           "Svelte",
                         ].map((skill) => (
-                          <Chip key={skill} label={skill} size="small" />
+                          <Chip
+                            key={skill}
+                            label={skill}
+                            size="small"
+                            sx={{
+                              transition: "all 0.2s ease",
+                              "&:hover": {
+                                backgroundColor: "primary.main",
+                                color: "white",
+                                transform: "scale(1.05)",
+                              },
+                            }}
+                          />
                         ))}
                       </Box>
                     </CardContent>
                   </Card>
                 </Grid>
                 <Grid item xs={12} md={4}>
-                  <Card sx={{ height: "100%" }}>
+                  <Card
+                    sx={{
+                      height: "100%",
+                      transition: "all 0.3s ease",
+                      cursor: "pointer",
+                      "&:hover": {
+                        transform: "translateY(-8px)",
+                        boxShadow: "0 12px 40px rgba(59, 130, 246, 0.15)",
+                        borderColor: "primary.main",
+                      },
+                    }}
+                  >
                     <CardContent>
                       <Box
                         sx={{
@@ -327,22 +414,47 @@ export default function Home() {
                           "Node.js",
                           "Express",
                           "MongoDB",
-                          "Javascript",
-                          "Typescript",
                           "Firebase",
+                          "Supabase",
+                          "MySQL",
+                          "PostgreSQL",
+                          "NoSQL",
                           "Pinecone",
                           "OpenAI API",
                           "Google API",
                           "Google Cloud",
                         ].map((skill) => (
-                          <Chip key={skill} label={skill} size="small" />
+                          <Chip
+                            key={skill}
+                            label={skill}
+                            size="small"
+                            sx={{
+                              transition: "all 0.2s ease",
+                              "&:hover": {
+                                backgroundColor: "primary.main",
+                                color: "white",
+                                transform: "scale(1.05)",
+                              },
+                            }}
+                          />
                         ))}
                       </Box>
                     </CardContent>
                   </Card>
                 </Grid>
                 <Grid item xs={12} md={4}>
-                  <Card sx={{ height: "100%" }}>
+                  <Card
+                    sx={{
+                      height: "100%",
+                      transition: "all 0.3s ease",
+                      cursor: "pointer",
+                      "&:hover": {
+                        transform: "translateY(-8px)",
+                        boxShadow: "0 12px 40px rgba(59, 130, 246, 0.15)",
+                        borderColor: "primary.main",
+                      },
+                    }}
+                  >
                     <CardContent>
                       <Box
                         sx={{
@@ -361,11 +473,24 @@ export default function Home() {
                         {[
                           "Git",
                           "Retrieval Augmented Generation (RAG)",
+                          "AI Agents",
                           "Figma",
                           "Responsive Design",
                           "Other APIs",
                         ].map((skill) => (
-                          <Chip key={skill} label={skill} size="small" />
+                          <Chip
+                            key={skill}
+                            label={skill}
+                            size="small"
+                            sx={{
+                              transition: "all 0.2s ease",
+                              "&:hover": {
+                                backgroundColor: "primary.main",
+                                color: "white",
+                                transform: "scale(1.05)",
+                              },
+                            }}
+                          />
                         ))}
                       </Box>
                     </CardContent>
@@ -436,7 +561,15 @@ export default function Home() {
               </Box>
               <Grid container spacing={4} className="py-12">
                 <Grid item xs={12} md={6}>
-                  <Card>
+                  <Card
+                    sx={{
+                      transition: "all 0.3s ease",
+                      "&:hover": {
+                        transform: "translateY(-4px)",
+                        boxShadow: "0 8px 30px rgba(59, 130, 246, 0.1)",
+                      },
+                    }}
+                  >
                     <CardContent>
                       <Typography variant="h5" component="h3" gutterBottom>
                         Contact Information
@@ -455,12 +588,25 @@ export default function Home() {
                             alignItems: "center",
                             gap: 2,
                             mb: 2,
+                            p: 1,
+                            borderRadius: 1,
+                            transition: "all 0.3s ease",
+                            cursor: "pointer",
+                            "&:hover": {
+                              backgroundColor: "primary.main",
+                              color: "white",
+                              transform: "translateX(8px)",
+                              "& .MuiSvgIcon-root": {
+                                transform: "scale(1.2)",
+                              },
+                            },
                           }}
                         >
                           <Mail className="h-5 w-5 text-primary" />
                           <Link
                             href="mailto:daelcarte@up.edu.ph"
                             className="text-sm hover:underline"
+                            style={{ textDecoration: "none", color: "inherit" }}
                           >
                             daelcarte@up.edu.ph
                           </Link>
@@ -471,6 +617,18 @@ export default function Home() {
                             alignItems: "center",
                             gap: 2,
                             mb: 2,
+                            p: 1,
+                            borderRadius: 1,
+                            transition: "all 0.3s ease",
+                            cursor: "pointer",
+                            "&:hover": {
+                              backgroundColor: "primary.main",
+                              color: "white",
+                              transform: "translateX(8px)",
+                              "& .MuiSvgIcon-root": {
+                                transform: "scale(1.2)",
+                              },
+                            },
                           }}
                         >
                           <Linkedin className="h-5 w-5 text-primary" />
@@ -479,6 +637,7 @@ export default function Home() {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-sm hover:underline"
+                            style={{ textDecoration: "none", color: "inherit" }}
                           >
                             linkedin.com/in/dave-elcarte-161a46223/
                           </Link>
@@ -489,6 +648,18 @@ export default function Home() {
                             alignItems: "center",
                             gap: 2,
                             mb: 2,
+                            p: 1,
+                            borderRadius: 1,
+                            transition: "all 0.3s ease",
+                            cursor: "pointer",
+                            "&:hover": {
+                              backgroundColor: "primary.main",
+                              color: "white",
+                              transform: "translateX(8px)",
+                              "& .MuiSvgIcon-root": {
+                                transform: "scale(1.2)",
+                              },
+                            },
                           }}
                         >
                           <Github className="h-5 w-5 text-primary" />
@@ -497,6 +668,7 @@ export default function Home() {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-sm hover:underline"
+                            style={{ textDecoration: "none", color: "inherit" }}
                           >
                             github.com/elcartedave
                           </Link>
@@ -506,7 +678,15 @@ export default function Home() {
                   </Card>
                 </Grid>
                 <Grid item xs={12} md={6}>
-                  <Card>
+                  <Card
+                    sx={{
+                      transition: "all 0.3s ease",
+                      "&:hover": {
+                        transform: "translateY(-4px)",
+                        boxShadow: "0 8px 30px rgba(59, 130, 246, 0.1)",
+                      },
+                    }}
+                  >
                     <CardContent>
                       <Typography variant="h5" component="h3" gutterBottom>
                         Send Me a Message
@@ -526,6 +706,15 @@ export default function Home() {
                           variant="outlined"
                           margin="normal"
                           placeholder="Your name"
+                          sx={{
+                            "& .MuiOutlinedInput-root": {
+                              transition: "all 0.3s ease",
+                              "&:hover": {
+                                transform: "translateY(-2px)",
+                                boxShadow: "0 4px 20px rgba(59, 130, 246, 0.1)",
+                              },
+                            },
+                          }}
                         />
                         <TextField
                           fullWidth
@@ -535,6 +724,15 @@ export default function Home() {
                           margin="normal"
                           type="email"
                           placeholder="Your email"
+                          sx={{
+                            "& .MuiOutlinedInput-root": {
+                              transition: "all 0.3s ease",
+                              "&:hover": {
+                                transform: "translateY(-2px)",
+                                boxShadow: "0 4px 20px rgba(59, 130, 246, 0.1)",
+                              },
+                            },
+                          }}
                         />
                         <TextField
                           fullWidth
@@ -545,12 +743,28 @@ export default function Home() {
                           multiline
                           rows={4}
                           placeholder="Your message"
+                          sx={{
+                            "& .MuiOutlinedInput-root": {
+                              transition: "all 0.3s ease",
+                              "&:hover": {
+                                transform: "translateY(-2px)",
+                                boxShadow: "0 4px 20px rgba(59, 130, 246, 0.1)",
+                              },
+                            },
+                          }}
                         />
                         <Button
                           type="submit"
                           variant="contained"
                           fullWidth
-                          sx={{ mt: 2 }}
+                          sx={{
+                            mt: 2,
+                            transition: "all 0.3s ease",
+                            "&:hover": {
+                              transform: "translateY(-2px)",
+                              boxShadow: "0 8px 25px rgba(59, 130, 246, 0.3)",
+                            },
+                          }}
                         >
                           Send Message
                         </Button>
@@ -580,7 +794,18 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <IconButton aria-label="GitHub">
+                <IconButton
+                  aria-label="GitHub"
+                  sx={{
+                    transition: "all 0.3s ease",
+                    "&:hover": {
+                      transform: "scale(1.2) translateY(-2px)",
+                      backgroundColor: "primary.main",
+                      color: "white",
+                      boxShadow: "0 4px 15px rgba(59, 130, 246, 0.3)",
+                    },
+                  }}
+                >
                   <Github className="h-5 w-5" />
                 </IconButton>
               </Link>
@@ -589,12 +814,34 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <IconButton aria-label="LinkedIn">
+                <IconButton
+                  aria-label="LinkedIn"
+                  sx={{
+                    transition: "all 0.3s ease",
+                    "&:hover": {
+                      transform: "scale(1.2) translateY(-2px)",
+                      backgroundColor: "primary.main",
+                      color: "white",
+                      boxShadow: "0 4px 15px rgba(59, 130, 246, 0.3)",
+                    },
+                  }}
+                >
                   <Linkedin className="h-5 w-5" />
                 </IconButton>
               </Link>
               <Link href="mailto:daelcarte@up.edu.ph">
-                <IconButton aria-label="Email">
+                <IconButton
+                  aria-label="Email"
+                  sx={{
+                    transition: "all 0.3s ease",
+                    "&:hover": {
+                      transform: "scale(1.2) translateY(-2px)",
+                      backgroundColor: "primary.main",
+                      color: "white",
+                      boxShadow: "0 4px 15px rgba(59, 130, 246, 0.3)",
+                    },
+                  }}
+                >
                   <Mail className="h-5 w-5" />
                 </IconButton>
               </Link>
