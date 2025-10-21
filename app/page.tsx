@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Code, Github, Linkedin, Mail, User } from "lucide-react";
+import ProjectCard from "../components/ProjectCard";
+import { projects } from "../data/projects";
 
 // Material UI imports
 import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Chip from "@mui/material/Chip";
@@ -21,9 +21,9 @@ export default function Home() {
     <div className="flex min-h-screen flex-col">
       <header className="sticky top-0 z-10  border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto flex h-16 items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 font-bold">
+          <Link href="/" className="flex items-center gap-2 pl-4 bold">
             <User className="h-5 w-5" />
-            <span>My Portfolio</span>
+            <span>Dave Andrie A. Elcarte</span>
           </Link>
           <nav className="hidden md:flex gap-6">
             <Link
@@ -51,7 +51,7 @@ export default function Home() {
               Contact
             </Link>
           </nav>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 pr-4">
             <Link
               href="https://github.com/elcartedave"
               target="_blank"
@@ -75,7 +75,7 @@ export default function Home() {
       </header>
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
+        <section className="w-full py-6 md:py-12 lg:py-18 xl:py-24">
           <Container maxWidth="lg">
             <Grid container spacing={6} alignItems="center">
               <Grid item xs={12} lg={6}>
@@ -96,9 +96,9 @@ export default function Home() {
                       color="text.secondary"
                       className="max-w-[600px]"
                     >
-                      A student specializing in software development such as
-                      creating mobile and web applications with Aritificial
-                      Intelligence integration
+                      A BS Computer Science student specializing in software
+                      development such as creating mobile and web applications
+                      with automation and artificial Intelligence integration
                     </Typography>
                   </Box>
                   <Box className="flex flex-col gap-2 min-[400px]:flex-row">
@@ -147,7 +147,7 @@ export default function Home() {
         {/* About Section */}
         <section
           id="about"
-          className="w-full py-12 md:py-24 lg:py-32 bg-muted/50"
+          className="w-full py-4 md:py-8 lg:py-12 xl:py-16 bg-muted/50"
         >
           <Container maxWidth="lg">
             <Box className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -161,10 +161,11 @@ export default function Home() {
                   className="max-w-[900px]"
                 >
                   I&apos;m a programmer and a software developer with a focus on
-                  mobile and web development. Also, I have expertise in modern
-                  frameworks like React and Next.js, and integrating it with AI
-                  functionalities. I build fast, scalable, and maintainable
-                  applications.
+                  mobile and web development. Also, my main expertise lies in
+                  modern frameworks like React and Next.js, with Firebase and/or
+                  Google Cloud Platform (GCP) as backend, and integrating it
+                  with AI functionalities. I build fast, scalable, and
+                  maintainable applications suitable for long-term use.
                 </Typography>
               </Box>
               <Grid container spacing={6} className="py-12 items-center">
@@ -217,8 +218,8 @@ export default function Home() {
                           </Typography>
                           <Typography variant="body2" color="text.secondary">
                             Outside of my coding time, I enjoy watching
-                            movies/series, playing basketball, and learn
-                            cybersecurity and AI courses
+                            movies/series, playing basketball, and learn data
+                            science, cybersecurity and AI courses
                           </Typography>
                         </Box>
                       </Box>
@@ -253,7 +254,7 @@ export default function Home() {
         {/* Skills Section */}
         <section
           id="skills"
-          className="w-full py-12 md:py-24 lg:py-32 bg-muted/50"
+          className="w-full py-4 md:py-8 lg:py-12 xl:py-16 bg-muted/50"
         >
           <Container maxWidth="lg">
             <Box className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -331,6 +332,8 @@ export default function Home() {
                           "Firebase",
                           "Pinecone",
                           "OpenAI API",
+                          "Google API",
+                          "Google Cloud",
                         ].map((skill) => (
                           <Chip key={skill} label={skill} size="small" />
                         ))}
@@ -374,7 +377,10 @@ export default function Home() {
         </section>
 
         {/* Projects Section */}
-        <section id="projects" className="w-full py-12 md:py-24 lg:py-32">
+        <section
+          id="projects"
+          className="w-full py-4 md:py-8 lg:py-12 xl:py-16"
+        >
           <Container maxWidth="lg">
             <Box className="flex flex-col items-center justify-center space-y-4 text-center">
               <Box className="space-y-2">
@@ -387,609 +393,32 @@ export default function Home() {
                   className="max-w-[900px]"
                 >
                   Here are some of my recent projects. These projects are either
-                  developed for personal use, school requirements, or
-                  hackathon-based projects
+                  developed for my clients, personal use, school requirements,
+                  or hackathon-based projects
                 </Typography>
               </Box>
+
               <Grid container spacing={4} className="py-12">
-                <Grid item xs={12} md={4}>
-                  <Card
-                    sx={{
-                      height: "100%",
-                      display: "flex",
-                      flexDirection: "column",
-                    }}
-                  >
-                    <CardContent>
-                      <Typography gutterBottom variant="h5" component="div">
-                        Landas - Iulat, Tugunan, Aksyunan
-                      </Typography>
-                      <Typography
-                        variant="body2"
-                        color="text.secondary"
-                        gutterBottom
-                      >
-                        A responsive website which gets crowdsourced data of the
-                        condition of several roads, streets, and sidewalks. The
-                        data gathered are then analyzed using OpenAI API in
-                        determining which roads need immediate action from the
-                        authorities.
-                      </Typography>
-                      <CardMedia
-                        component="img"
-                        height="140"
-                        image="/assets/landas.png"
-                        alt="Project One"
-                        sx={{ borderRadius: 1, my: 2 }}
-                      />
-                      <Box
-                        sx={{
-                          display: "flex",
-                          flexWrap: "wrap",
-                          gap: 1,
-                          mt: 2,
-                        }}
-                      >
-                        <Chip label="Next.js" size="small" />
-                        <Chip label="TypeScript" size="small" />
-                        <Chip label="Tailwind CSS" size="small" />
-                        <Chip label="MongoDB" size="small" />
-                        <Chip label="OpenAI API" size="small" />
-                      </Box>
-                    </CardContent>
-                    <CardActions
-                      sx={{
-                        mt: "auto",
-                        justifyContent: "space-between",
-                        px: 2,
-                        pb: 2,
-                      }}
-                    >
-                      <Button
-                        size="small"
-                        variant="outlined"
-                        startIcon={<Github className="h-4 w-4" />}
-                        component={Link}
-                        href="https://github.com/Dreei/sidewalk-frontend"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Code
-                      </Button>
-                    </CardActions>
-                  </Card>
-                </Grid>
-                <Grid item xs={12} md={4}>
-                  <Card
-                    sx={{
-                      height: "100%",
-                      display: "flex",
-                      flexDirection: "column",
-                    }}
-                  >
-                    <CardContent>
-                      <Typography gutterBottom variant="h5" component="div">
-                        Labubu Love Guru
-                      </Typography>
-                      <Typography
-                        variant="body2"
-                        color="text.secondary"
-                        gutterBottom
-                      >
-                        A user authenticated AI chatbot that specializes in
-                        giving relationship, self-care advices, and quotes thru
-                        a stored database and prompt engineering principles.
-                      </Typography>
-                      <CardMedia
-                        component="img"
-                        height="140"
-                        image="/assets/labubu.png"
-                        alt="Project Two"
-                        sx={{ borderRadius: 1, my: 2, objectFit: "cover" }}
-                      />
-                      <Box
-                        sx={{
-                          display: "flex",
-                          flexWrap: "wrap",
-                          gap: 1,
-                          mt: 2,
-                        }}
-                      >
-                        <Chip label="React" size="small" />
-                        <Chip label="MongoDB" size="small" />
-                        <Chip label="Express" size="small" />
-                        <Chip label="Node.jS" size="small" />
-                        <Chip label="Pinecone" size="small" />
-                        <Chip label="OpenAI API" size="small" />
-                      </Box>
-                    </CardContent>
-                    <CardActions
-                      sx={{
-                        mt: "auto",
-                        justifyContent: "space-between",
-                        px: 2,
-                        pb: 2,
-                      }}
-                    >
-                      <Button
-                        size="small"
-                        variant="outlined"
-                        startIcon={<Github className="h-4 w-4" />}
-                        component={Link}
-                        href="https://github.com/elcartedave/labubu-ai-chatbot.git"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Code
-                      </Button>
-                      <Button
-                        size="small"
-                        variant="contained"
-                        endIcon={<ArrowRight className="h-4 w-4" />}
-                        component={Link}
-                        href="https://labubu-ai-guru.vercel.app"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Demo
-                      </Button>
-                    </CardActions>
-                  </Card>
-                </Grid>
-                <Grid item xs={12} md={4}>
-                  <Card
-                    sx={{
-                      height: "100%",
-                      display: "flex",
-                      flexDirection: "column",
-                    }}
-                  >
-                    <CardContent>
-                      <Typography gutterBottom variant="h5" component="div">
-                        Sandiwapp
-                      </Typography>
-                      <Typography
-                        variant="body2"
-                        color="text.secondary"
-                        gutterBottom
-                      >
-                        This is a mobile application for a student organization
-                        which aims to provide a centralized member, applicant,
-                        events, and announcements&apos; management system.
-                      </Typography>
-                      <CardMedia
-                        component="img"
-                        height="140"
-                        image="/assets/sandiwapp.png"
-                        alt="Project Three"
-                        sx={{ borderRadius: 1, my: 2, objectFit: "cover" }}
-                      />
-                      <Box
-                        sx={{
-                          display: "flex",
-                          flexWrap: "wrap",
-                          gap: 1,
-                          mt: 2,
-                        }}
-                      >
-                        <Chip label="Flutter" size="small" />
-                        <Chip label="Firebase" size="small" />
-                      </Box>
-                    </CardContent>
-                    <CardActions
-                      sx={{
-                        mt: "auto",
-                        justifyContent: "space-between",
-                        px: 2,
-                        pb: 2,
-                      }}
-                    >
-                      <Button
-                        size="small"
-                        variant="outlined"
-                        startIcon={<Github className="h-4 w-4" />}
-                        component={Link}
-                        href="https://github.com/elcartedave/sandiwapp.git"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Code
-                      </Button>
-                    </CardActions>
-                  </Card>
-                </Grid>
-                <Grid item xs={12} md={4}>
-                  <Card
-                    sx={{
-                      height: "100%",
-                      display: "flex",
-                      flexDirection: "column",
-                    }}
-                  >
-                    <CardContent>
-                      <Typography gutterBottom variant="h5" component="div">
-                        LOLCode Interpreter
-                      </Typography>
-                      <Typography
-                        variant="body2"
-                        color="text.secondary"
-                        gutterBottom
-                      >
-                        This is a GUI-based interpreter for the LOLCode
-                        programming language. It is able to execute statements
-                        written in .lol file. It aims to simulate how
-                        interpreters are created
-                      </Typography>
-                      <CardMedia
-                        component="img"
-                        height="140"
-                        image="/assets/lolcode.jfif"
-                        alt="Project Four"
-                        sx={{ borderRadius: 1, my: 2, objectFit: "cover" }}
-                      />
-                      <Box
-                        sx={{
-                          display: "flex",
-                          flexWrap: "wrap",
-                          gap: 1,
-                          mt: 2,
-                        }}
-                      >
-                        <Chip label="Python" size="small" />
-                        <Chip label="LOLCode" size="small" />
-                      </Box>
-                    </CardContent>
-                    <CardActions
-                      sx={{
-                        mt: "auto",
-                        justifyContent: "space-between",
-                        px: 2,
-                        pb: 2,
-                      }}
-                    >
-                      <Button
-                        size="small"
-                        variant="outlined"
-                        startIcon={<Github className="h-4 w-4" />}
-                        component={Link}
-                        href="https://github.com/Samoy-ed/LOL_Code_Interpreter"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Code
-                      </Button>
-                    </CardActions>
-                  </Card>
-                </Grid>
-                <Grid item xs={12} md={4}>
-                  <Card
-                    sx={{
-                      height: "100%",
-                      display: "flex",
-                      flexDirection: "column",
-                    }}
-                  >
-                    <CardContent>
-                      <Typography gutterBottom variant="h5" component="div">
-                        GiveCommit
-                      </Typography>
-                      <Typography
-                        variant="body2"
-                        color="text.secondary"
-                        gutterBottom
-                      >
-                        GiveCommit is a mobile application designed to
-                        facilitate charitable donations by connecting donors
-                        with organizations that accept various types of
-                        contributions.
-                      </Typography>
-                      <CardMedia
-                        component="img"
-                        height="140"
-                        image="/assets/give.png"
-                        alt="Project Five"
-                        sx={{ borderRadius: 1, my: 2, objectFit: "cover" }}
-                      />
-                      <Box
-                        sx={{
-                          display: "flex",
-                          flexWrap: "wrap",
-                          gap: 1,
-                          mt: 2,
-                        }}
-                      >
-                        <Chip label="Flutter" size="small" />
-                        <Chip label="Firebase" size="small" />
-                      </Box>
-                    </CardContent>
-                    <CardActions
-                      sx={{
-                        mt: "auto",
-                        justifyContent: "space-between",
-                        px: 2,
-                        pb: 2,
-                      }}
-                    >
-                      <Button
-                        size="small"
-                        variant="outlined"
-                        startIcon={<Github className="h-4 w-4" />}
-                        component={Link}
-                        href="https://github.com/addomingo/CMSC-23-2024-GiveCommitr"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Code
-                      </Button>
-                    </CardActions>
-                  </Card>
-                </Grid>
-                <Grid item xs={12} md={4}>
-                  <Card
-                    sx={{
-                      height: "100%",
-                      display: "flex",
-                      flexDirection: "column",
-                    }}
-                  >
-                    <CardContent>
-                      <Typography gutterBottom variant="h5" component="div">
-                        FarmToTable
-                      </Typography>
-                      <Typography
-                        variant="body2"
-                        color="text.secondary"
-                        gutterBottom
-                      >
-                        This is a full stack e-commerce application built to
-                        handle selling, keeping sales history, generating sales
-                        reports, and management of agricultural products.
-                      </Typography>
-                      <CardMedia
-                        component="img"
-                        height="140"
-                        image="/assets/farm.png"
-                        alt="Project Six"
-                        sx={{ borderRadius: 1, my: 2, objectFit: "cover" }}
-                      />
-                      <Box
-                        sx={{
-                          display: "flex",
-                          flexWrap: "wrap",
-                          gap: 1,
-                          mt: 2,
-                        }}
-                      >
-                        <Chip label="MongoDB" size="small" />
-                        <Chip label="Express" size="small" />
-                        <Chip label="React" size="small" />
-                        <Chip label="Nodejs" size="small" />
-                      </Box>
-                    </CardContent>
-                    <CardActions
-                      sx={{
-                        mt: "auto",
-                        justifyContent: "space-between",
-                        px: 2,
-                        pb: 2,
-                      }}
-                    >
-                      <Button
-                        size="small"
-                        variant="outlined"
-                        startIcon={<Github className="h-4 w-4" />}
-                        component={Link}
-                        href="https://github.com/elcartedave/ProjectCMSC100"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Code
-                      </Button>
-                    </CardActions>
-                  </Card>
-                </Grid>
-                <Grid item xs={12} md={4}>
-                  <Card
-                    sx={{
-                      height: "100%",
-                      display: "flex",
-                      flexDirection: "column",
-                    }}
-                  >
-                    <CardContent>
-                      <Typography gutterBottom variant="h5" component="div">
-                        Putahe Puntahe
-                      </Typography>
-                      <Typography
-                        variant="body2"
-                        color="text.secondary"
-                        gutterBottom
-                      >
-                        This application was developed to add and manage food
-                        establishments, foods, assign, edit, and delete reviews,
-                        showcases the mastery of Database Management Systems
-                        (DBMS) and Structured Query Lange (SQL).
-                      </Typography>
-                      <CardMedia
-                        component="img"
-                        height="140"
-                        image="/assets/putahe.png"
-                        alt="Project Four"
-                        sx={{ borderRadius: 1, my: 2, objectFit: "cover" }}
-                      />
-                      <Box
-                        sx={{
-                          display: "flex",
-                          flexWrap: "wrap",
-                          gap: 1,
-                          mt: 2,
-                        }}
-                      >
-                        <Chip label="MariaDB" size="small" />
-                        <Chip label="Express" size="small" />
-                        <Chip label="React" size="small" />
-                        <Chip label="Node.js" size="small" />
-                      </Box>
-                    </CardContent>
-                    <CardActions
-                      sx={{
-                        mt: "auto",
-                        justifyContent: "space-between",
-                        px: 2,
-                        pb: 2,
-                      }}
-                    >
-                      <Button
-                        size="small"
-                        variant="outlined"
-                        startIcon={<Github className="h-4 w-4" />}
-                        component={Link}
-                        href="https://github.com/eljohnevnglsta/CMSC-127-Final-Project"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Code
-                      </Button>
-                    </CardActions>
-                  </Card>
-                </Grid>
-                <Grid item xs={12} md={4}>
-                  <Card
-                    sx={{
-                      height: "100%",
-                      display: "flex",
-                      flexDirection: "column",
-                    }}
-                  >
-                    <CardContent>
-                      <Typography gutterBottom variant="h5" component="div">
-                        Hoppy Froggy
-                      </Typography>
-                      <Typography
-                        variant="body2"
-                        color="text.secondary"
-                        gutterBottom
-                      >
-                        This game is a platform game in which the sprite jumps
-                        on the never ending platforms and only ends when they
-                        fall/bumped into predators. It highlights the use of
-                        object-oriented programming and it&apos;s pillars
-                      </Typography>
-                      <CardMedia
-                        component="img"
-                        height="140"
-                        image="/assets/hoppy.png"
-                        alt="Project Four"
-                        sx={{ borderRadius: 1, my: 2, objectFit: "cover" }}
-                      />
-                      <Box
-                        sx={{
-                          display: "flex",
-                          flexWrap: "wrap",
-                          gap: 1,
-                          mt: 2,
-                        }}
-                      >
-                        <Chip label="Java" size="small" />
-                        <Chip label="JavaFX" size="small" />
-                      </Box>
-                    </CardContent>
-                    <CardActions
-                      sx={{
-                        mt: "auto",
-                        justifyContent: "space-between",
-                        px: 2,
-                        pb: 2,
-                      }}
-                    >
-                      <Button
-                        size="small"
-                        variant="outlined"
-                        startIcon={<Github className="h-4 w-4" />}
-                        component={Link}
-                        href="https://github.com/elcartedave/hoppy-froggy.git"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Code
-                      </Button>
-                    </CardActions>
-                  </Card>
-                </Grid>
-                <Grid item xs={12} md={4}>
-                  <Card
-                    sx={{
-                      height: "100%",
-                      display: "flex",
-                      flexDirection: "column",
-                    }}
-                  >
-                    <CardContent>
-                      <Typography gutterBottom variant="h5" component="div">
-                        Diet Problem Solver
-                      </Typography>
-                      <Typography
-                        variant="body2"
-                        color="text.secondary"
-                        gutterBottom
-                      >
-                        This project is used for computing the optimal servings
-                        needed by the customer in a minimum price while
-                        maintaining the number of servings needed.
-                      </Typography>
-                      <CardMedia
-                        component="img"
-                        height="140"
-                        image="/assets/diet.png"
-                        alt="Project Four"
-                        sx={{
-                          borderRadius: 1,
-                          my: 2,
-                          objectFit: "cover",
-                          height: "140",
-                        }}
-                      />
-                      <Box
-                        sx={{
-                          display: "flex",
-                          flexWrap: "wrap",
-                          gap: 1,
-                          mt: 2,
-                        }}
-                      >
-                        <Chip label="R" size="small" />
-                        <Chip label="Shiny" size="small" />
-                      </Box>
-                    </CardContent>
-                    <CardActions
-                      sx={{
-                        mt: "auto",
-                        justifyContent: "space-between",
-                        px: 2,
-                        pb: 2,
-                      }}
-                    >
-                      <Button
-                        size="small"
-                        variant="outlined"
-                        startIcon={<Github className="h-4 w-4" />}
-                        component={Link}
-                        href="https://github.com/elcartedave/diet-problem-solver.git"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Code
-                      </Button>
-                    </CardActions>
-                  </Card>
-                </Grid>
+                {projects.map((project) => (
+                  <Grid item xs={12} md={4} key={project.id}>
+                    <ProjectCard
+                      title={project.title}
+                      description={project.description}
+                      image={project.image}
+                      imageAlt={project.imageAlt}
+                      technologies={project.technologies}
+                      githubUrl={project.githubUrl}
+                      demoUrl={project.demoUrl}
+                    />
+                  </Grid>
+                ))}
               </Grid>
             </Box>
           </Container>
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="w-full py-12 md:py-24 lg:py-32">
+        <section id="contact" className="w-full py-4 md:py-8 lg:py-12 xl:py-16">
           <Container maxWidth="lg">
             <Box className="flex flex-col items-center justify-center space-y-4 text-center">
               <Box className="space-y-2">
