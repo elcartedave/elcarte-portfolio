@@ -18,7 +18,7 @@ export const projects: Project[] = [
     image: "/assets/coffee.png",
     imageAlt: "Coffee Shop Website",
     technologies: ["Next.js", "Firebase", "Tailwind", "TypeScript"],
-    githubUrl: "https://github.com/elcartedave/coffee-shop-website",
+    githubUrl: "https://github.com/elcartedave/b1t1-website",
     demoUrl: "https://b1t1-website.vercel.app/",
   },
   {
