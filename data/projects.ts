@@ -21,24 +21,7 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/elcartedave/b1t1-website",
     demoUrl: "https://b1t1-website.vercel.app/",
   },
-  {
-    id: "document-qa",
-    title: "AI Document Assistant",
-    description:
-      "An AI-powered document assistant that can answer questions about the document and provide insights based on the document's content.",
-    image: "/assets/document.png",
-    imageAlt: "AI Document Assistant",
-    technologies: [
-      "Next.js",
-      "Tailwind",
-      "TypeScript",
-      "OpenAI API",
-      "Groq API",
-      "Pinecone",
-    ],
-    githubUrl: "https://github.com/elcartedave/ai-document-assistant",
-    demoUrl: "https://ai-document-assistant-iota.vercel.app/",
-  },
+
   {
     id: "ics-arms",
     title: "ICS Alumni Relations and Management System (ICS-ARMS)",
@@ -47,8 +30,8 @@ export const projects: Project[] = [
     image: "/assets/alumni.png",
     imageAlt: "ICS Alumni Relations and Management System",
     technologies: [
-      "Firebase",
       "Next.js",
+      "Firebase",
       "Tailwind",
       "TypeScript",
       "OpenAI API",
@@ -66,15 +49,50 @@ export const projects: Project[] = [
     image: "/assets/franchise.png",
     imageAlt: "Franchising Company Dashboard",
     technologies: [
+      "Next.js",
       "Firebase",
       "Pinecone",
       "OpenAI API",
-      "Next.js",
       "Tailwind",
       "Google Maps API",
     ],
     githubUrl: "https://github.com/elcartedave/twfi-dashboard.git",
     demoUrl: "https://twfi-dashboard.vercel.app",
+  },
+  {
+    id: "mental-health-assistant",
+    title: "ALALAY - A Mental Health Assistant",
+    description:
+      "An AI-powered mental health assistant that can help users with their everyday well being and mental health concerns and provide insights based on the user's input.",
+    image: "/assets/alalay.jpg",
+    imageAlt: "ALALAY - A Mental Health Assistant",
+    technologies: [
+      "Next.js",
+      "Supabase",
+      "Tailwind",
+      "TypeScript",
+      "OpenAI API",
+    ],
+    githubUrl: "https://github.com/elcartedave/alalay",
+    demoUrl: "https://alalay.vercel.app/",
+  },
+  {
+    id: "document-qa",
+    title: "AI Document Assistant",
+    description:
+      "An AI-powered document assistant that can answer questions about the document and provide insights based on the document's content.",
+    image: "/assets/document.png",
+    imageAlt: "AI Document Assistant",
+    technologies: [
+      "Next.js",
+      "Pinecone",
+      "Tailwind",
+      "TypeScript",
+      "OpenAI API",
+      "Groq API",
+    ],
+    githubUrl: "https://github.com/elcartedave/ai-document-assistant",
+    demoUrl: "https://ai-document-assistant-iota.vercel.app/",
   },
   {
     id: "landas",
@@ -85,9 +103,9 @@ export const projects: Project[] = [
     imageAlt: "Landas Project",
     technologies: [
       "Next.js",
+      "MongoDB",
       "TypeScript",
       "Tailwind CSS",
-      "MongoDB",
       "OpenAI API",
     ],
     githubUrl: "https://github.com/Dreei/sidewalk-frontend",

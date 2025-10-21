@@ -476,6 +476,8 @@ export default function Home() {
                           "AI Agents",
                           "Figma",
                           "Responsive Design",
+                          "Vercel Web Hosting",
+                          "Firease Hosting",
                           "Other APIs",
                         ].map((skill) => (
                           <Chip
